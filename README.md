@@ -65,3 +65,17 @@ regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 regressor_OLS.summary()X_opt = X[:, [0, 3]]
 X_opt = X_opt.astype(np.float64)regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
 regressor_OLS.summary()
+
+Questions
+Question 1: How do I use my multiple linear regression model to make a single prediction, for example, the profit of a startup with R&D Spend = 160000, Administration Spend = 130000, Marketing Spend = 300000 and State = California?
+
+print(regressor.predict([[1, 0, 0, 160000, 130000, 300000]]))
+
+
+Question 2: How do I get the final regression equation y = b0 + b1 x1 + b2 x2 + ... with the final values of the coefficients?
+
+
+print(regressor.coef_)
+print(regressor.intercept_)
+
+
